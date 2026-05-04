@@ -1,6 +1,7 @@
 from pathlib import Path
+
 from quantum_portfolio import __version__
-from quantum_portfolio.config import load_optimization_config, build_component
+from quantum_portfolio.config import build_component, load_optimization_config
 from quantum_portfolio.data.loaders import load_csv_timeseries
 from quantum_portfolio.data.validators import validate_returns_dataframe
 from quantum_portfolio.optimization import PortfolioOptimizer

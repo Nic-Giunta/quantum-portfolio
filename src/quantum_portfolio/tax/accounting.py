@@ -1,1 +1,2 @@
-from .lots import TaxLot, TaxLotBook
+from .lots import TaxLot as TaxLot
+from .lots import TaxLotBook as TaxLotBook

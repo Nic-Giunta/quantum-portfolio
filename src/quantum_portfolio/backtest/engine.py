@@ -1,7 +1,10 @@
 from dataclasses import dataclass
+
 import pandas as pd
+
 from .metrics import performance_metrics
 from .rebalancing import make_rebalance_calendar
+
 
 @dataclass
 class BacktestResult:
@@ -16,7 +19,7 @@ class BacktestResult:
 class BacktestEngine:
     returns: pd.DataFrame
     strategy: object
-    rebalance_frequency: str = "M"
+    rebalance_frequency: str = "ME"
     lookback: int = 252
     transaction_cost_rate: float = 0.001
     slippage_rate: float = 0.0005

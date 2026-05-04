@@ -1,7 +1,10 @@
 from __future__ import annotations
-from typing import Protocol, Any, TypeAlias
+
+from typing import Any, Protocol, TypeAlias
+
 import numpy as np
 import pandas as pd
+
 ArrayLike: TypeAlias = np.ndarray | pd.Series | pd.DataFrame
 Weights: TypeAlias = pd.Series
 class Fittable(Protocol):

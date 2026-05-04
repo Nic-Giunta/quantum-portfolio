@@ -1,1 +1,3 @@
-from quantum_portfolio.data.preprocessing import simple_returns, log_returns, prices_to_returns
+from quantum_portfolio.data.preprocessing import log_returns as log_returns
+from quantum_portfolio.data.preprocessing import prices_to_returns as prices_to_returns
+from quantum_portfolio.data.preprocessing import simple_returns as simple_returns

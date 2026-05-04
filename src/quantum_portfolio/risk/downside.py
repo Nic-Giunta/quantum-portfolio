@@ -1,9 +1,13 @@
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
+
+from quantum_portfolio.utils.math import annualization_factor
+
 from .base import RiskModel
 from .psd import nearest_psd
-from quantum_portfolio.utils.math import annualization_factor
+
 
 @dataclass
 class SemiCovariance(RiskModel):

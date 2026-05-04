@@ -1,7 +1,11 @@
 from dataclasses import dataclass
+
 import cvxpy as cp
+
 from quantum_portfolio.constraints.base import Constraint
+
 from .base import Objective
+
 
 @dataclass
 class MinVariance(Objective):

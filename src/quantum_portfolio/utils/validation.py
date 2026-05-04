@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
+
 from quantum_portfolio.utils.exceptions import DataValidationError
+
 
 def ensure_series(x, index=None, name="series") -> pd.Series:
     s = x if isinstance(x, pd.Series) else pd.Series(x, dtype=float)

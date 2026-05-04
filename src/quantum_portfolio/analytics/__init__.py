@@ -1,4 +1,4 @@
+from .attribution import active_share, return_attribution
+from .explain import component_risk_contribution, explain_weights, marginal_risk_contribution
 from .performance import performance_metrics
-from .attribution import return_attribution, active_share
-from .explain import explain_weights, marginal_risk_contribution, component_risk_contribution
-from .sensitivity import sensitivity_to_expected_returns, bootstrap_weight_stability
+from .sensitivity import bootstrap_weight_stability, sensitivity_to_expected_returns

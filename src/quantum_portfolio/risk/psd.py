@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 def eigenvalue_clipping(covariance: pd.DataFrame, min_eigenvalue: float=1e-8) -> pd.DataFrame:
     vals, vecs = np.linalg.eigh((covariance.to_numpy()+covariance.to_numpy().T)/2)
     arr = vecs @ np.diag(np.clip(vals, min_eigenvalue, None)) @ vecs.T

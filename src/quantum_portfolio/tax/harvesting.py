@@ -1,5 +1,8 @@
 import pandas as pd
+
 from .lots import TaxLotBook
+
+
 def tax_loss_harvesting_candidates(book: TaxLotBook, prices: pd.Series, min_loss: float=0.0) -> pd.DataFrame:
     rows = []
     for lot in book.lots:

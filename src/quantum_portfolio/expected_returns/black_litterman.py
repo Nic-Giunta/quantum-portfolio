@@ -1,8 +1,12 @@
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
-from .base import ExpectedReturnModel
+
 from quantum_portfolio.risk.covariance import SampleCovariance
+
+from .base import ExpectedReturnModel
+
 
 @dataclass
 class BlackLitterman(ExpectedReturnModel):

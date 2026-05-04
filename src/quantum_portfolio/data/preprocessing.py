@@ -1,8 +1,12 @@
 from __future__ import annotations
+
 from collections.abc import Iterator
+
 import numpy as np
 import pandas as pd
+
 from .validators import validate_prices_dataframe, validate_returns_dataframe
+
 
 def handle_missing_data(data: pd.DataFrame, method: str = "drop", *, limit: int | None=None) -> pd.DataFrame:
     if method == "drop": return data.dropna()

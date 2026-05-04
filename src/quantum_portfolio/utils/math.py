@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 import numpy as np
 import pandas as pd
+
 
 def annualization_factor(index: pd.Index | None, default: int = 252) -> int:
     if not isinstance(index, pd.DatetimeIndex) or len(index) < 3:

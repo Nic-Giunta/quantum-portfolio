@@ -1,5 +1,7 @@
 import pytest
-from quantum_portfolio.data.synthetic import make_synthetic_returns, make_synthetic_prices
+
+from quantum_portfolio.data.synthetic import make_synthetic_prices, make_synthetic_returns
+
 
 @pytest.fixture
 def returns():

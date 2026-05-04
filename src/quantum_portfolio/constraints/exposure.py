@@ -1,7 +1,9 @@
 from dataclasses import dataclass
-import cvxpy as cp
+
 import pandas as pd
+
 from .base import Constraint
+
 
 @dataclass
 class FactorExposure(Constraint):

@@ -1,5 +1,7 @@
 from dataclasses import dataclass
+
 from .base import RiskModel
+
 
 def drawdown_series(returns):
     wealth = (1+returns).cumprod()

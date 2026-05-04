@@ -1,7 +1,10 @@
 from dataclasses import dataclass
+
 import cvxpy as cp
 import numpy as np
+
 from .base import Objective
+
 
 @dataclass
 class RobustMeanVariance(Objective):

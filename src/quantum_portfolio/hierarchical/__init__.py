@@ -1,4 +1,4 @@
 from .clustering import *
-from .hrp import HRPAllocator
 from .herc import HERCAllocator
+from .hrp import HRPAllocator
 from .nco import NCOAllocator

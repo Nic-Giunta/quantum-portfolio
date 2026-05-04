@@ -1,7 +1,17 @@
 import pandas as pd
+
 from quantum_portfolio import PortfolioOptimizer
-from quantum_portfolio.constraints import LongOnly, MaxWeight, GroupExposure, TurnoverLimit, TrackingErrorLimit, FactorExposure
+from quantum_portfolio.constraints import (
+    FactorExposure,
+    GroupExposure,
+    LongOnly,
+    MaxWeight,
+    TrackingErrorLimit,
+    TurnoverLimit,
+)
 from quantum_portfolio.objectives import MinVariance
+
+
 def test_long_max(returns):
     r = PortfolioOptimizer(returns, objective=MinVariance(), constraints=[LongOnly(), MaxWeight(.5)]).solve()
     assert (r.weights >= -1e-7).all(); assert (r.weights <= .5+1e-6).all()

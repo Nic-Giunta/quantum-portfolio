@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 def make_synthetic_returns(n_periods: int=252, n_assets: int=5, seed: int=42, freq: str="B") -> pd.DataFrame:
     rng = np.random.default_rng(seed)
     a = rng.normal(size=(n_assets, n_assets))

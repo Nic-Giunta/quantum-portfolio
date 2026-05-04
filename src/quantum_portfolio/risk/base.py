@@ -1,5 +1,8 @@
 from abc import ABC, abstractmethod
+
 import pandas as pd
+
+
 class RiskModel(ABC):
     name = "risk_model"
     @abstractmethod

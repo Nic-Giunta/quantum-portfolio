@@ -1,1 +1,1 @@
-from .frontier import EfficientFrontier
+from .frontier import EfficientFrontier as EfficientFrontier

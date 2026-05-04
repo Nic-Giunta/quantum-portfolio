@@ -1,8 +1,12 @@
 from dataclasses import dataclass
+
 import pandas as pd
-from .base import ExpectedReturnModel
+
 from quantum_portfolio.data.validators import validate_returns_dataframe
 from quantum_portfolio.utils.math import annualization_factor
+
+from .base import ExpectedReturnModel
+
 
 @dataclass
 class HistoricalMean(ExpectedReturnModel):

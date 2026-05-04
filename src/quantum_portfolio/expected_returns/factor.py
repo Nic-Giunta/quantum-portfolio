@@ -1,10 +1,14 @@
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LinearRegression
-from .base import ExpectedReturnModel
+
 from quantum_portfolio.utils.math import annualization_factor
+
+from .base import ExpectedReturnModel
+
 
 @dataclass
 class CAPMExpectedReturns(ExpectedReturnModel):

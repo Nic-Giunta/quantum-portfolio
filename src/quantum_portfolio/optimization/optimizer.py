@@ -1,20 +1,29 @@
 from __future__ import annotations
+
+import time
 from dataclasses import dataclass, field
 from typing import Any
-import time
+
 import cvxpy as cp
 import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
+
 from quantum_portfolio.constraints import Constraint, WeightSum
 from quantum_portfolio.data.validators import validate_returns_dataframe
 from quantum_portfolio.expected_returns import ExpectedReturnModel, HistoricalMean
-from quantum_portfolio.risk import RiskModel, SampleCovariance
-from quantum_portfolio.objectives import Objective, MinVariance, RiskParityObjective, MaxDiversification
+from quantum_portfolio.objectives import (
+    MaxDiversification,
+    MinVariance,
+    Objective,
+    RiskParityObjective,
+)
 from quantum_portfolio.optimization.problem import OptimizationContext
 from quantum_portfolio.optimization.result import OptimizationResult
 from quantum_portfolio.optimization.solvers import choose_solver
+from quantum_portfolio.risk import RiskModel, SampleCovariance
 from quantum_portfolio.utils.exceptions import OptimizationError
+
 
 @dataclass
 class PortfolioOptimizer:

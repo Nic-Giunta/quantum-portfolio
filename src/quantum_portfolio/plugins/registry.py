@@ -1,4 +1,6 @@
 from dataclasses import dataclass, field
+
+
 @dataclass
 class PluginRegistry:
     risk_models: dict = field(default_factory=dict)

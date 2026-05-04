@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
-from scipy.cluster.hierarchy import linkage, leaves_list
+from scipy.cluster.hierarchy import leaves_list, linkage
 from scipy.spatial.distance import squareform
+
 
 def correlation_distance(correlation: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(np.sqrt((1-correlation.clip(-1,1))/2), index=correlation.index, columns=correlation.columns)

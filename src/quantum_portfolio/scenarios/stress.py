@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+
 from .base import Scenario
+
+
 @dataclass
 class ShockScenario(Scenario):
     asset_shocks: object | None = None

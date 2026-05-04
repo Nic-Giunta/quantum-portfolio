@@ -1,6 +1,9 @@
 from dataclasses import dataclass
+
 import cvxpy as cp
+
 from .mean_risk import MeanVarianceUtility
+
 
 @dataclass
 class TaxAwareUtility(MeanVarianceUtility):

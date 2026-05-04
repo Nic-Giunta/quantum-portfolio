@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+
+
 def performance_metrics(returns, *, benchmark=None, periods_per_year: int=252, turnover=None, transaction_costs=None):
     r = returns.dropna(); wealth = (1+r).cumprod(); years = len(r)/periods_per_year
     cumulative = float(wealth.iloc[-1]-1) if len(wealth) else 0.0

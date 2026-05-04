@@ -1,10 +1,14 @@
 from dataclasses import dataclass
+
 import pandas as pd
-from sklearn.covariance import LedoitWolf, OAS
-from .base import RiskModel
-from .psd import nearest_psd
+from sklearn.covariance import OAS, LedoitWolf
+
 from quantum_portfolio.data.validators import validate_returns_dataframe
 from quantum_portfolio.utils.math import annualization_factor
+
+from .base import RiskModel
+from .psd import nearest_psd
+
 
 @dataclass
 class SampleCovariance(RiskModel):

@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+
 from .base import Objective
+
+
 @dataclass
 class MaxDiversification(Objective):
     name: str = "max_diversification"

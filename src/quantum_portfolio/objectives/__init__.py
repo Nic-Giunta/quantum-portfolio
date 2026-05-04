@@ -1,8 +1,17 @@
 from .base import Objective
-from .mean_risk import MinVariance, MeanVarianceUtility, MaxSharpe, TargetReturn, TargetRisk, TargetReturnObjective, TargetRiskObjective, MinCVaR
-from .risk_parity import RiskParityObjective, EqualRiskContribution
 from .diversification import MaxDiversification
-from .robust import RobustMeanVariance
-from .utility import MinTransactionCosts
-from .tax_aware import TaxAwareUtility
+from .mean_risk import (
+    MaxSharpe,
+    MeanVarianceUtility,
+    MinCVaR,
+    MinVariance,
+    TargetReturn,
+    TargetReturnObjective,
+    TargetRisk,
+    TargetRiskObjective,
+)
 from .multi_period import MultiPeriodUtility
+from .risk_parity import EqualRiskContribution, RiskParityObjective
+from .robust import RobustMeanVariance
+from .tax_aware import TaxAwareUtility
+from .utility import MinTransactionCosts

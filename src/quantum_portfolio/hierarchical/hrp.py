@@ -1,7 +1,10 @@
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
+
 from .clustering import quasi_diagonal_order
+
 
 def _cluster_variance(cov: pd.DataFrame, assets: list[str]) -> float:
     sub = cov.loc[assets, assets]

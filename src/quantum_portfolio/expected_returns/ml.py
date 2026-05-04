@@ -1,11 +1,14 @@
+import warnings
 from dataclasses import dataclass
 from typing import Any
-import warnings
+
 import numpy as np
 import pandas as pd
 from sklearn.base import clone
 from sklearn.ensemble import RandomForestRegressor
+
 from .base import ExpectedReturnModel
+
 
 @dataclass
 class FeatureBuilder:
@@ -31,8 +34,9 @@ class MLExpectedReturns(ExpectedReturnModel):
         if self.feature_builder is None: self.feature_builder = FeatureBuilder()
         warnings.warn("MLExpectedReturns can leak and overfit; use walk-forward validation.", UserWarning, stacklevel=2)
     def estimate(self, returns: pd.DataFrame) -> pd.Series:
-        X = self.feature_builder.transform(returns); latest = X.iloc[[-1]]
-        out = {}
+        builder = self.feature_builder or FeatureBuilder()
+        X = builder.transform(returns); latest = X.iloc[[-1]]
+        out: dict[str, float] = {}
         for asset in returns.columns:
             y = returns[asset].shift(-self.horizon).reindex(X.index)
             mask = y.notna()

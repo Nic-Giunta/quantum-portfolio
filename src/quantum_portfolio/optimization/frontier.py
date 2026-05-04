@@ -1,16 +1,21 @@
 from dataclasses import dataclass
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
+
 from quantum_portfolio.constraints import Constraint, TargetReturn
+from quantum_portfolio.expected_returns import ExpectedReturnModel
 from quantum_portfolio.objectives import MinVariance
 from quantum_portfolio.optimization.optimizer import PortfolioOptimizer
+from quantum_portfolio.risk import RiskModel
+
 
 @dataclass
 class EfficientFrontier:
     returns: pd.DataFrame
-    expected_return_model: object
-    risk_model: object
+    expected_return_model: ExpectedReturnModel
+    risk_model: RiskModel
     constraints: list[Constraint]
     def compute(self, n_points: int=25, solver: str | None=None) -> pd.DataFrame:
         mu = self.expected_return_model.estimate(self.returns)

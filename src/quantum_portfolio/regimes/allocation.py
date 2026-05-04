@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+
+
 @dataclass
 class RegimeAwareAllocator:
     low_vol_optimizer: object | None = None

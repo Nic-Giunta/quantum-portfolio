@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+
 import pandas as pd
+
+
 @dataclass
 class ADVLiquidityModel:
     adv: pd.Series

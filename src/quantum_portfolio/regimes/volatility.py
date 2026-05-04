@@ -1,1 +1,1 @@
-from .detectors import VolatilityRegimeDetector
+from .detectors import VolatilityRegimeDetector as VolatilityRegimeDetector

@@ -1,1 +1,1 @@
-from quantum_portfolio.objectives.robust import RobustMeanVariance
+from quantum_portfolio.objectives.robust import RobustMeanVariance as RobustMeanVariance

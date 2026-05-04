@@ -1,6 +1,9 @@
 from dataclasses import dataclass
+
 import pandas as pd
+
 from .base import Constraint
+
 
 @dataclass
 class ESGScoreConstraint(Constraint):

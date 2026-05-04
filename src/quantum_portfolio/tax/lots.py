@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from datetime import date
+
 import pandas as pd
+
 
 @dataclass(frozen=True)
 class TaxLot:
@@ -17,7 +19,7 @@ class TaxLotBook:
     def from_positions(cls, positions: pd.DataFrame):
         return cls([TaxLot(str(r.asset), float(r.quantity), float(r.cost_basis), pd.Timestamp(r.acquisition_date).date()) for r in positions.itertuples(index=False)])
     def unrealized_gains(self, prices: pd.Series) -> pd.Series:
-        out = {}
+        out: dict[str, float] = {}
         for lot in self.lots: out[lot.asset] = out.get(lot.asset, 0.0) + lot.unrealized_gain(float(prices.loc[lot.asset]))
         return pd.Series(out)
     def realized_gain_for_sale(self, asset: str, quantity: float, price: float) -> float:

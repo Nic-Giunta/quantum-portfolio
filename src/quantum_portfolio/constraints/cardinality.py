@@ -1,6 +1,9 @@
 from dataclasses import dataclass
+
 import cvxpy as cp
+
 from .base import Constraint
+
 
 @dataclass
 class CardinalityConstraint(Constraint):

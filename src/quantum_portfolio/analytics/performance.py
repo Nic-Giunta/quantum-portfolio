@@ -1,1 +1,1 @@
-from quantum_portfolio.backtest.metrics import performance_metrics
+from quantum_portfolio.backtest.metrics import performance_metrics as performance_metrics

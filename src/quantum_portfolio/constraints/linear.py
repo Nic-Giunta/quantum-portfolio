@@ -1,9 +1,11 @@
 from dataclasses import dataclass
+
 import cvxpy as cp
 import numpy as np
 import pandas as pd
+
 from .base import Constraint
-from quantum_portfolio.optimization.problem import OptimizationContext
+
 
 @dataclass
 class LongOnly(Constraint):
