@@ -1,0 +1,1 @@
+from .shrinkage import BayesianShrinkage

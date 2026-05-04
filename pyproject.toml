@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quantum-portfolio"
+description = "Clean-room, modular portfolio optimization and construction framework."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{name = "QuantumPortfolio Contributors"}]
+dynamic = ["version"]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "cvxpy>=1.4",
+  "pydantic>=2.0",
+  "joblib>=1.3",
+  "matplotlib>=3.7",
+  "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "hypothesis>=6.90", "ruff>=0.5", "mypy>=1.7", "pre-commit>=3.5", "build>=1.0"]
+docs = ["mkdocs-material>=9.5", "mkdocstrings[python]>=0.24"]
+data = ["yfinance>=0.2"]
+cli = ["typer>=0.12", "rich>=13.7", "PyYAML>=6.0"]
+ml = ["plotly>=5.18"]
+commercial-solvers = []
+all = ["pytest>=7.4", "hypothesis>=6.90", "ruff>=0.5", "mypy>=1.7", "pre-commit>=3.5", "build>=1.0", "mkdocs-material>=9.5", "mkdocstrings[python]>=0.24", "yfinance>=0.2", "typer>=0.12", "rich>=13.7", "PyYAML>=6.0", "plotly>=5.18"]
+
+[project.scripts]
+quantum-portfolio = "quantum_portfolio.cli.app:main"
+
+[tool.hatch.version]
+path = "src/quantum_portfolio/version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quantum_portfolio"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "C4"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["quantum_portfolio"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

@@ -1,0 +1,18 @@
+returns_path: examples/sample_returns.csv
+expected_return_model:
+  name: HistoricalMean
+  params: {}
+risk_model:
+  name: LedoitWolfCovariance
+  params: {}
+objective:
+  name: MeanVarianceUtility
+  params:
+    risk_aversion: 3.0
+constraints:
+  - name: LongOnly
+    params: {}
+  - name: MaxWeight
+    params:
+      maximum: 0.4
+solver: CLARABEL

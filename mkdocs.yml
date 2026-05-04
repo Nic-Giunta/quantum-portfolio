@@ -1,0 +1,9 @@
+site_name: QuantumPortfolio
+theme:
+  name: material
+plugins:
+  - search
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quickstart: quickstart.md
