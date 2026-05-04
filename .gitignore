@@ -9,4 +9,4 @@ dist/
 .venv/
 site/
 runs/
-reports/
+/reports/
